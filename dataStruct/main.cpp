@@ -5,8 +5,6 @@ using namespace std;
 
 int main ()
 {
-
-
 	cout << "sdfg" << endl;
 	return 0;
 }
