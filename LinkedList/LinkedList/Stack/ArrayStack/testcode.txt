@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <malloc.h>
-#include "stack/stack.h"
 #include "arrayStack/arrayStack.h"
 
 int main ()
