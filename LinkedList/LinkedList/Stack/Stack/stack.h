@@ -39,6 +39,9 @@
 #include <stdlib.h>
 #include <malloc.h>
 
+//用于输出错误提示信息
+# define logError(x) printf(x)
+
 //空栈标志，在pop或top操作时，如果栈为空则返回该标志
 #define EmptyStack -65534
 

@@ -33,6 +33,10 @@ bool isEmpty (Stack S)
 pNode makeEmpty (int value)
 {
     pNode p = (pNode) malloc (sizeof (struct Node));//申请节点内存
+    if(p == NULL)
+    {
+        logError ("Out of Space!!!");
+    }
     //初始化节点元素和指针
     p->next = NULL;
     p->value = value;
