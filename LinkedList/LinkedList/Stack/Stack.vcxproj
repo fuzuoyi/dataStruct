@@ -111,10 +111,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArrayStack\arrayStack.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Stack\stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayStack\arrayStack.h" />
     <ClInclude Include="Stack\stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

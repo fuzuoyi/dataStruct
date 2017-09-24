@@ -21,9 +21,15 @@
     <ClCompile Include="Stack\stack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ArrayStack\arrayStack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stack\stack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayStack\arrayStack.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
