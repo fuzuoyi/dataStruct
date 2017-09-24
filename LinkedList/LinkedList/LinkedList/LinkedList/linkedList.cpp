@@ -48,12 +48,11 @@ bool isEmpty (List L)
 int getSize (List L)
 {
     int size = 0;
-    List l = L;
-    l = l->next;      //将指针从头结点移动到第一个元素
-    while(l != NULL)  //遍历链表，记录节点个数
+    L = L->next;      //将指针从头结点移动到第一个元素
+    while(L != NULL)  //遍历链表，记录节点个数
     {
         size++;
-        l = l->next;
+        L = L->next;
     }
     return size;
 }
@@ -83,13 +82,12 @@ void insert_head (int Value, List L)
 void insert_tail (int Value, List L)
 {
     pNode temp = makeEmpty (Value);
-    List l = L;            //新建指针，用于遍历链表
 
-    while(l->next != NULL) //遍历链表，直到指针节点为尾部元素（指针指向NULL）
+    while(L->next != NULL) //遍历链表，直到指针节点为尾部元素（指针指向NULL）
     {
-        l = l->next;
+        L = L->next;
     }
-    l->next = temp;        //完成插入操作
+    L->next = temp;        //完成插入操作
 }
 
 
@@ -111,18 +109,17 @@ bool insert (int Value, int index, List L)
         return false;
     }
 
-    List l = L;//创建指针，用于遍历链表
     pNode temp = makeEmpty (Value);//创建并初始化新节点
 
     //将指针移动到index节点的前一个节点
     for(int i = 0; i < index; i++)
     {
-        l = l->next;
+        L = L->next;
     }
 
     //变换节点指针，完成插入操作
-    temp->next = l->next;
-    l->next = temp;
+    temp->next = L->next;
+    L->next = temp;
 
     return true;
 }
@@ -158,17 +155,16 @@ void delete_tail (List L)
 
     //获取链表元素个数和创建遍历指针
     int size = getSize (L);
-    List l = L;
 
     //将遍历指针移动到尾部元素的前一个节点
     for(int i = 1; i < size; i++)
     {
-        l = l->next;
+        L = L->next;
     }
 
     //尾部元素是链表最后一个元素，可直接free，然后将前一元素指针指向NULL
-    free (l->next);
-    l->next = NULL;
+    free (L->next);
+    L->next = NULL;
 }
 
 
@@ -242,14 +238,13 @@ pNode getNode (int index, List L)
         return NULL;
     }
 
-    //创建遍历指针，并将指针移动到index处
-    pNode pN = L;
+    //将指针移动到index处
     for(int i = -1; i < index; i++)
     {
-        pN = pN->next;
+        L = L->next;
     }
 
-    return pN;
+    return L;
 }
 
 //************************************
@@ -345,10 +340,10 @@ int getTail (List L)
 //************************************
 void traversal_List (List L)
 {
-    List l = L->next;  //移动指针到第一个元素
-    while(l != NULL)   //开始遍历，逐一打印
+    L = L->next;  //移动指针到第一个元素
+    while(L != NULL)   //开始遍历，逐一打印
     {
-        printf ("%d\t", l->value);
-        l = l->next;
+        printf ("%d\t", L->value);
+        L = L->next;
     }
 }
