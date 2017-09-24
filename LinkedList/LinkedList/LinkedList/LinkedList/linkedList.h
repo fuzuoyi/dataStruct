@@ -40,6 +40,9 @@
 /*  
 /************************************************************************/
 
+#ifndef __LINKEDLIST_H__
+#define __LINKEDLIST_H__
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -92,3 +95,5 @@ int getTail (List L);                //返回尾部元素
 int getValve (int index, List L);    //返回index处的元素
 
 void traversal_List (List L);        //遍历链表
+
+#endif
