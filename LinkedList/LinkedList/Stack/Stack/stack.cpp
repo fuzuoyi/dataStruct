@@ -123,11 +123,26 @@ int top (Stack S)
 
 //************************************
 // Method:    clearStack
+// FullName:  clearStack
+// Access:    public 
+// Qualifier:
+// Parameter: Stack S
+// Returns:   void
+// Description:
+//************************************
+void clearStack (Stack S)
+{
+    while(!isEmpty (S))
+        pop (S);
+}
+
+//************************************
+// Method:    deleteStack
 // Parameter: Stack S
 // Returns:   void
 // Description: 清空栈（所有元素，包括头结点），清空后栈指针失效
 //************************************
-void clearStack (Stack S)
+void deleteStack (Stack S)
 {
     Stack s = S;
     //遍历栈，逐一释放内存

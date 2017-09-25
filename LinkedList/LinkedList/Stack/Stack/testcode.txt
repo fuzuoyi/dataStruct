@@ -15,7 +15,12 @@ int main ()
     push (6, s);
     top (s);
     top (s);
-    printf("%d", getSize (s));
+    printf ("%d\r\n", getSize (s));
+    clearStack (s);
+    push (4, s);
+    push (6, s);
+    top (s);
+    printf ("%d\r\n", getSize (s));
 
     return 0;
 }

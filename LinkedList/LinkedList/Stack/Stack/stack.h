@@ -69,7 +69,8 @@ int pop (Stack S);               //从栈顶取出一个元素
 
 int top (Stack S);               //查看栈顶元素
 
-void clearStack (Stack S);       //清空栈(包括头结点)
+void clearStack (Stack S);       //清空栈
+void deleteStack (Stack S);       //清空栈(包括头结点)
 
 void traversal_Stack (Stack S);  //遍历栈
 
