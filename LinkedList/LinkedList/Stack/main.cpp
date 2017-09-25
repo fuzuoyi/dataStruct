@@ -23,12 +23,15 @@ int main ()
         push (i, s);
     }
 
+    printf ("%d\r\n", getSize (s));
+
+
     pop (s);
     pop (s);
 
     traversal_Stack (s);
-
     printf ("%d\r\n", getSize (s));
+
 
     system ("pause");
     return 0;
