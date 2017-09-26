@@ -111,10 +111,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArrayQueue\arrayQueue.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Queue\queue.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayQueue\arrayQueue.h" />
     <ClInclude Include="Queue\queue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

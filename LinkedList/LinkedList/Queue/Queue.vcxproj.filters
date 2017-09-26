@@ -21,9 +21,15 @@
     <ClCompile Include="Queue\queue.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ArrayQueue\arrayQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Queue\queue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayQueue\arrayQueue.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
