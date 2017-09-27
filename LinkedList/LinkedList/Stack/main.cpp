@@ -1,27 +1,35 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "ArrayStack/arrayStack.h"
 #include "stack/stack.h"
 
 int main ()
 {
-    Stack s = makeEmpty ();
-    push (1, s);
-    push (2, s);
-    push (3, s);
-    top (s);
+    arrayStack s = createStack (10);
+
+    for(int i = 0; i < 11; i++)
+    {
+        push (i, s);
+    }
+
     pop (s);
     pop (s);
-    push (4, s);
-    push (6, s);
-    top (s);
-    top (s);
-    printf ("%d\r\n", getSize (s));
-    clearStack (s);
-    push (4, s);
-    push (6, s);
-    top (s);
+
+    emptyStack (s);
+
+    for(int i = 0; i < 5; i++)
+    {
+        push (i, s);
+    }
+
+    pop (s);
+    pop (s);
+
+    traversal_Stack (s);
+
     printf ("%d\r\n", getSize (s));
 
+    system ("pause");
     return 0;
 }
 

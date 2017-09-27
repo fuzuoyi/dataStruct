@@ -68,7 +68,7 @@ arrayStack createStack (int capacity)
     S->array = (int *) malloc (sizeof (int) * capacity); //申请数组内存
 
     //检验是否申请到内存
-    if(S->capacity == NULL)
+    if(S->array == NULL)
         logError ("Out of space!!!");
 
     //完成初始化索引和容量操作
