@@ -48,6 +48,10 @@ bool isFull (arrayQueue Q)
     return Q->size == Q->capacity;
 }
 
+
+
+
+
 int getSize (arrayQueue Q)
 {
     return Q->size;
