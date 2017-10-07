@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//#include "Queue/queue.h"
+#include "Queue/queue.h"
 #include "ArrayQueue/arrayQueue.h"
 
 int main ()
