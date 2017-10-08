@@ -18,7 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Sort\bubbleSort.cpp">
+    <ClCompile Include="Sort\sort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
