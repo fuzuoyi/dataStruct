@@ -8,6 +8,6 @@ void swap (int array[], int pos1, int pos2);
 void bubbleSort (int array[], int arrayLength);
 void selectionSort (int array[], int arrayLength);
 void insertionSort (int array[], int arrayLength);
-void mergeSort (int array[], int arrayLength);
+
 
 #endif

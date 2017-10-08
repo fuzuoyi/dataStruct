@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Sort/sort.h"
 
+void mergeSort (int array[], int arrayLength);
 
 
 
@@ -37,5 +38,9 @@ int main ()
 
 void mergeSort (int array[], int arrayLength)
 {
+    auto MSort = [](int A[], int TmpArray, int start, int end) 
+    {
+
+    };
 
 }
