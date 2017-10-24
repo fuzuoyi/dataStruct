@@ -4,10 +4,10 @@
 
 void mergeSort (int array[], int arrayLength);
 
-
+   
 
 int main ()
-{
+{  
     int data[] = { 34,1,7,5,44,30,33,22,18,4,11,4,31,11 };
     // 
     //int data[] = { 34};
