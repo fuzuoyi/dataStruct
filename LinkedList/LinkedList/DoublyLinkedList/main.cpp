@@ -16,8 +16,8 @@ struct Node
 };
 
 
-pNode makeEmptyNode(int value = 0); 
-bool makeEmptyDList (pNode head, pNode rear);
+pNode makeEmptyNode(int value); 
+void makeEmptyDList (pNode &head, pNode &rear);
 
 
 bool isEmpty(DList L);
@@ -58,9 +58,10 @@ pNode makeEmptyNode(int value = 0)
 	return p;
 }
 
-bool makeEmptyDList (pNode head, pNode rear)
+void makeEmptyDList (pNode &head, pNode &rear)
 {
-
+    head = makeEmptyNode ();
+    rear = makeEmptyNode ();
 }
 
 
@@ -87,3 +88,13 @@ int getValve(int index, DList L);
 
 void traversal_List(DList L);
 
+int main ()
+{
+    pNode head = NULL, rear = NULL;
+    makeEmptyDList (head, rear);
+
+    printf ("%ld %ld",&head, &rear);
+
+    system ("pause");
+    return 0;
+}
