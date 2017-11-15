@@ -68,6 +68,9 @@ pNode makeEmptyNode(int value = 0)
 DList makeEmptyDList ()
 {
     DList d = (pDList) malloc (sizeof (struct doublyLinkedList));
+    if(d == NULL)
+        logError ("Out of Space!!!");
+
     d->head = makeEmptyNode ();
     d->rear = makeEmptyNode ();
     d->head->next = d->rear;
@@ -94,8 +97,30 @@ int getSize (DList L)
     return size;
 }
 
-void insert_head(int Value, DList L);
-void insert_tail(int Value, DList L);
+void insert_head (int Value, DList L)
+{
+    pNode p = makeEmptyNode (Value);
+
+    p->next = L->head->next;
+    L->head->next->piror = p;
+
+
+    L->head->next = p;
+    p->piror = L->head;
+}
+
+void insert_tail (int Value, DList L)
+{
+    pNode p = makeEmptyNode (Value);
+
+    p->piror = L->rear->piror;
+    L->rear->piror->next = p;
+
+
+    L->rear->piror = p;
+    p->next = L->rear;
+}
+
 bool insert(int Value, int index, DList L);
 
 void delete_head(DList L);
@@ -117,6 +142,10 @@ int main ()
 {
     pNode head = NULL, rear = NULL;
     DList d = makeEmptyDList();
+
+
+    insert_head (2, d);
+    insert_tail (3, d);
 
     isEmpty (d);
     getSize (d);
