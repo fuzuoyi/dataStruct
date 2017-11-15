@@ -5,8 +5,9 @@
 #define logError(x) printf(x)
 
 struct Node;
-typedef struct Node *pNode;
-typedef pNode DList;
+typedef struct Node* pNode;
+typedef struct doublyLinkedList* pDList;
+typedef pDList DList;
 
 struct Node
 {
@@ -15,9 +16,15 @@ struct Node
 	pNode piror;
 };
 
+struct doublyLinkedList
+{
+    pNode head;
+    pNode rear;
+};
+
 
 pNode makeEmptyNode(int value); 
-void makeEmptyDList (pNode &head, pNode &rear);
+DList makeEmptyDList ();
 
 
 bool isEmpty(DList L);
@@ -58,16 +65,34 @@ pNode makeEmptyNode(int value = 0)
 	return p;
 }
 
-void makeEmptyDList (pNode &head, pNode &rear)
+DList makeEmptyDList ()
 {
-    head = makeEmptyNode ();
-    rear = makeEmptyNode ();
+    DList d = (pDList) malloc (sizeof (struct doublyLinkedList));
+    d->head = makeEmptyNode ();
+    d->rear = makeEmptyNode ();
+    d->head->next = d->rear;
+    d->rear->piror = d->head;
+    return d;
 }
 
 
-bool isEmpty(DList L);
+bool isEmpty (DList L)
+{
+    return L->head->next == L->rear;
+}
 
-int getSize(DList L);
+int getSize (DList L)
+{
+    pNode p = L->head;
+    int size = 0;
+
+    while(p->next != L->rear)
+    {
+        size++;
+        p = p->next;
+    }
+    return size;
+}
 
 void insert_head(int Value, DList L);
 void insert_tail(int Value, DList L);
@@ -91,9 +116,10 @@ void traversal_List(DList L);
 int main ()
 {
     pNode head = NULL, rear = NULL;
-    makeEmptyDList (head, rear);
+    DList d = makeEmptyDList();
 
-    printf ("%ld %ld",&head, &rear);
+    isEmpty (d);
+    getSize (d);
 
     system ("pause");
     return 0;
