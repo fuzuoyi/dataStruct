@@ -24,7 +24,6 @@ int main ()
 
     PrintIntArray (data, size);
 
-    
 
     clock_t t = time_test (sort, data,size,100);
 
