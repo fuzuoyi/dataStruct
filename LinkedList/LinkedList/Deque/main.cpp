@@ -3,9 +3,6 @@
 #include <malloc.h>
 #include "deque/deque.h"
 
-
-
-
 int main ()
 {
     pNode head = NULL, rear = NULL;
