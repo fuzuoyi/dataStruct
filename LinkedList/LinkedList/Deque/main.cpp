@@ -22,17 +22,17 @@ int main ()
     peek_back (d);
     peek_front (d);
 
-    traversal_List (d);
+    traversal_Deque (d);
 
     enqueue_front (6, d);
     enqueue_front (7, d);
 
-    traversal_List (d);
+    traversal_Deque (d);
 
     dequeue_back (d);
     dequeue_front (d);
 
-    traversal_List (d);
+    traversal_Deque (d);
 
     isEmpty (d);
     getSize (d);

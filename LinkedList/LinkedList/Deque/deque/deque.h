@@ -40,25 +40,30 @@ struct DEQUE
 };
 
 
+// 创建新节点和双向队列
 pNode makeEmptyNode (int Value = 0);
 Deque makeEmptyDeque ();
 
+// 判断是否为空；统计队列个数
 bool isEmpty (Deque D);
 int getSize (Deque D);
 
+// 从队列头部或尾部插入新节点
 void enqueue_front (int Value, Deque D);
 void enqueue_back (int Value, Deque D);
 
-
+// 从队列头部或尾部删除节点
 void dequeue_front (Deque D);
 void dequeue_back (Deque D);
 
-
+//  删除队列
 void deleteDeque (Deque D);
 
+// 获取队列头部或尾部节点值
 int peek_front (Deque D);
 int peek_back (Deque D);
 
-void traversal_List (Deque D);
+// 遍历双端队列
+void traversal_Deque (Deque D);
 
 #endif // !__DEQUE_H__

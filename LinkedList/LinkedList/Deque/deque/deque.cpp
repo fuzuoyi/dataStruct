@@ -124,7 +124,7 @@ int peek_back (Deque D)
     return D->tail->piror->value;
 }
 
-void traversal_List (Deque D)
+void traversal_Deque (Deque D)
 {
     pNode p = D->head->next;
 
