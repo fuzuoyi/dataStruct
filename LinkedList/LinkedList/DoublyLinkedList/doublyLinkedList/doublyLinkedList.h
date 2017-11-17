@@ -1,5 +1,5 @@
-#ifndef __DOUBLYLINKEDLIST__
-#define __DOUBLYLINKEDLIST__
+#ifndef __DOUBLYLINKEDLIST_H__
+#define __DOUBLYLINKEDLIST_H__
 
 #include <stdio.h>
 #include <stdlib.h>
