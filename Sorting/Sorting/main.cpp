@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <malloc.h>
 #include "Sort/sort.h"
 
-void mergeSort (int array[], int arrayLength);
+
 
    
 
 int main ()
 {  
-    int data[] = { 34,1,7,5,44,30,33,22,18,4,11,4,31,11 };
+    int data[] = { 3,44,38,5,47,15,36,26,27,2,46,4,25,44,32 };
     // 
     //int data[] = { 34};
 
@@ -21,7 +22,7 @@ int main ()
     printf ("\r\n");
 
 
-    insertionSort (data, size);
+    mergeSort (data, size);
 
     for(int i = 0; i < size; i++)
     {
@@ -34,15 +35,3 @@ int main ()
     return 0;
 }
 
-
-
-void mergeSort (int array[], int arrayLength)
-{
-    auto MSort = [](int A[], int TmpArray, int start, int end) 
-    {
-
-    };
-
-
-
-}

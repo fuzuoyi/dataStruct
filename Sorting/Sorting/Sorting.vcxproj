@@ -112,6 +112,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Sort\mergeSort.cpp" />
     <ClCompile Include="Sort\sort.cpp" />
   </ItemGroup>
   <ItemGroup>
