@@ -9,51 +9,72 @@
 typedef void (*SortFunc)(int *,int);   
 
 
-clock_t time_test (SortFunc, int array[], int arrayLength, int count);
+clock_t time_test (SortFunc, int array[], int arrayLength, int count=1);
+void PrintIntArray (int num_array[], int arrayLength);
 
-void getRandArray (int arrayLength, int array[]);
+void getIntRandArray (int num_array[], int arrayLength);
    
 
 int main ()
 {  
-    int data[] = { 3,44,38,5,47,15,36,26,27,2,46,4,25,44,32 };
-    // 
-    //int data[] = { 34};
+    //SortFunc sort = &mergeSort;
+    //bubbleSort
+    //selectionSort
+    //insertionSort
+    SortFunc sort = &mergeSort;
 
+    int data[1000];
     int size = sizeof (data) / sizeof (int);
 
-    //for (int i = 0;i<size;i++)
-    //{
-    //    printf ("%d\t",data[i]);
-    //}
-    //printf ("\r\n");
+    getIntRandArray (data, size);
 
+    PrintIntArray (data, size);
 
-    //mergeSort (data, size);
+    
 
-    //for(int i = 0; i < size; i++)
-    //{
-    //    printf ("%d\t",data[i]);
-    //}
+    clock_t t = time_test (sort, data,size,100);
 
-    //printf ("\r\n");
+    PrintIntArray (data, size);
 
-    SortFunc sort = &insertionSort;
-
-    clock_t t = time_test (sort, data,size,10000);
-    for(int i = 0; i < size; i++)
-    {
-        printf ("%d\t", data[i]);
-    }
     printf ("time: %ld\r\n", t);
 
     system ("pause");
     return 0;
 }
 
-void getRandArray (int arrayLength, int array[])
-{
 
+void PrintIntArray (int num_array[], int arrayLength)
+{
+    for (int i = 0;i<arrayLength;i++)
+    {
+        printf ("%d\t", num_array[i]);
+    }
+    printf ("\r\n");
+}
+
+void getIntRandArray (int num_array[],int arrayLength)
+{
+    int index = arrayLength - 1;
+    int rand_value;
+
+    int *usedIndex = (int*) malloc (arrayLength * sizeof (int));
+   
+    for(int i = 0; i < arrayLength; i++)
+        usedIndex[i] = 0;
+
+    srand((unsigned)time(0));
+
+    while (index >= 0)
+    {
+        rand_value = rand() % arrayLength;
+    	if (usedIndex[rand_value] == 1) continue;
+    	else
+    	{
+    		usedIndex[rand_value] = 1;
+            num_array[index] = rand_value;
+            index--;
+    	}
+    }
 }
 
 
@@ -63,9 +84,6 @@ clock_t time_test (SortFunc sort, int num_array[], int arrayLength, int count)
 
     int *temp_array = (int*) malloc (arrayLength * sizeof (int));
     memcpy (temp_array, num_array, arrayLength * sizeof (int));
-
-
-    
 
     for(int i = 0; i < count; i++)
     {
