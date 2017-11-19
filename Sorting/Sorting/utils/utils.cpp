@@ -14,6 +14,20 @@ void getIntRandArray (int num_array[], int arrayLength)
     int index = arrayLength - 1;
     int rand_value;
 
+    srand ((unsigned) time (0));
+
+    for(int i = 0; i < arrayLength; i++)
+    {
+        rand_value = rand () % arrayLength;
+        num_array[i] = rand_value;
+    }
+}
+
+void getLinerIntRandArray (int num_array[], int arrayLength)
+{
+    int index = arrayLength - 1;
+    int rand_value;
+
     int *usedIndex = (int*) malloc (arrayLength * sizeof (int));
 
     for(int i = 0; i < arrayLength; i++)

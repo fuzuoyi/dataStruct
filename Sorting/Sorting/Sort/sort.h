@@ -11,14 +11,14 @@
 
 void swap (int array[], int pos1, int pos2);
 
-// implement in "sort.cpp
+// implement in "sort.cpp"
 
 void bubbleSort (int array[], int arrayLength);
 void selectionSort (int array[], int arrayLength);
 void insertionSort (int array[], int arrayLength);
 
 
-// implement in "mergeSort.cpp
+// implement in "mergeSort.cpp"
 
 void mergeSort (int array[], int arrayLength);
 
