@@ -7,7 +7,11 @@
 #include "Sort/sort.h"
 #include "utils/utils.h"
 
-   
+// typedef void (*SortFunc)(int *, int); //define in utils.h
+
+
+
+
 
 int main ()
 {  
@@ -15,15 +19,17 @@ int main ()
     //bubbleSort
     //selectionSort
     //insertionSort
-    SortFunc sort = &mergeSort;
+    //mergeSort
+    //quickSort
+    SortFunc sort = &quickSort;
 
-    int data[1000];
+    int data[100];
     int size = sizeof (data) / sizeof (int);
 
     getIntRandArray (data, size);
+    //getLinerIntRandArray (data, size);
 
     PrintIntArray (data, size);
-
 
     clock_t t = time_test (sort, data,size,100);
 

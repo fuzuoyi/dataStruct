@@ -22,4 +22,10 @@ void insertionSort (int array[], int arrayLength);
 
 void mergeSort (int array[], int arrayLength);
 
+
+// implement in "mergeSort.cpp"
+
+void quickSort (int array[], int arrayLength);
+
+
 #endif

@@ -27,6 +27,9 @@
     <ClCompile Include="utils\utils.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Sort\quickSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sort\sort.h">
