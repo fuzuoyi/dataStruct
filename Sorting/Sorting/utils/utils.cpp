@@ -11,7 +11,6 @@ void PrintIntArray (int num_array[], int arrayLength)
 
 void getIntRandArray (int num_array[], int arrayLength)
 {
-    int index = arrayLength - 1;
     int rand_value;
 
     srand ((unsigned) time (0));
@@ -46,6 +45,21 @@ void getLinerIntRandArray (int num_array[], int arrayLength)
             index--;
         }
     }
+}
+
+void getLinerIntArray (int num_array[], int arrayLength, bool reverseOrder)
+{
+    if(reverseOrder == false)
+    {
+        for(int i = 0; i < arrayLength; i++)
+            num_array[i] = i;
+    }
+    else
+    {
+        for(int i = 0; i < arrayLength; i++)
+            num_array[i] = arrayLength - i - 1;
+    }
+
 }
 
 

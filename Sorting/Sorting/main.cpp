@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include<string.h>
+#include <string.h>
 #include <time.h>
 
 #include "Sort/sort.h"
 #include "utils/utils.h"
 
-// typedef void (*SortFunc)(int *, int); //define in utils.h
 
+// typedef void (*SortFunc)(int *, int); //define in utils.h
 
 
 
@@ -21,13 +21,13 @@ int main ()
     //insertionSort
     //mergeSort
     //quickSort
+    //randomQuickSort
     SortFunc sort = &quickSort;
 
-    int data[100];
+    int data[1000];
     int size = sizeof (data) / sizeof (int);
 
-    getIntRandArray (data, size);
-    //getLinerIntRandArray (data, size);
+    getLinerIntRandArray (data, size);
 
     PrintIntArray (data, size);
 

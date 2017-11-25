@@ -14,8 +14,10 @@ clock_t time_test (SortFunc, int array[], int arrayLength, int count = 1);
 void PrintIntArray (int num_array[], int arrayLength);
 
 void getIntRandArray (int num_array[], int arrayLength);
+
 void getLinerIntRandArray (int num_array[], int arrayLength);
 
+void getLinerIntArray (int num_array[], int arrayLength, bool reverseOrder = false);
 
 
 

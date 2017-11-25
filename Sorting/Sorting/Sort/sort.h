@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
+#include <time.h>
 
 # define LogError(x) printf(x)
 
@@ -26,6 +27,11 @@ void mergeSort (int array[], int arrayLength);
 // implement in "mergeSort.cpp"
 
 void quickSort (int array[], int arrayLength);
+
+
+// implement in "randomQuickSort.cpp"
+
+void randomQuickSort (int array[], int arrayLength);
 
 
 #endif
