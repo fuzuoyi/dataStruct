@@ -114,6 +114,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Sort\mergeSort.cpp" />
     <ClCompile Include="Sort\quickSort.cpp" />
+    <ClCompile Include="Sort\radixSort.cpp" />
     <ClCompile Include="Sort\randQuickSort.cpp" />
     <ClCompile Include="Sort\sort.cpp" />
     <ClCompile Include="utils\utils.cpp" />

@@ -4,8 +4,11 @@
 #include <string.h>
 #include <time.h>
 
+
 #include "Sort/sort.h"
 #include "utils/utils.h"
+
+#include <queue>
 
 
 // typedef void (*SortFunc)(int *, int); //define in utils.h
@@ -22,12 +25,16 @@ int main ()
     //mergeSort
     //quickSort
     //randomQuickSort
-    SortFunc sort = &quickSort;
+    //radixSort
+    //countingSort
 
-    int data[1000];
+    SortFunc sort = &radixSort;
+
+    int data[10000];
     int size = sizeof (data) / sizeof (int);
 
     getLinerIntRandArray (data, size);
+    //getRandArray_bound (data, size, MaxNum);
 
     PrintIntArray (data, size);
 

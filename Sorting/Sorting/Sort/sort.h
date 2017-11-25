@@ -6,7 +6,7 @@
 #include <malloc.h>
 #include <time.h>
 
-# define LogError(x) printf(x)
+#define LogError(x) printf(x)
 
 #define getIntArraySize (_array) sizeof (_array) / sizeof (int);
 
@@ -17,6 +17,10 @@ void swap (int array[], int pos1, int pos2);
 void bubbleSort (int array[], int arrayLength);
 void selectionSort (int array[], int arrayLength);
 void insertionSort (int array[], int arrayLength);
+
+// MaxNum用于设置计数排序countingSort的边界
+#define MaxNum 50
+void countingSort (int array[], int arrayLength);
 
 
 // implement in "mergeSort.cpp"
@@ -33,5 +37,9 @@ void quickSort (int array[], int arrayLength);
 
 void randomQuickSort (int array[], int arrayLength);
 
+
+// implement in "radixSort.cpp"
+
+void radixSort (int array[], int arrayLength);
 
 #endif

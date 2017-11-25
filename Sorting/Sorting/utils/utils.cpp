@@ -9,6 +9,24 @@ void PrintIntArray (int num_array[], int arrayLength)
     printf ("\r\n");
 }
 
+void getRandArray (int num_array[], int arrayLength)
+{
+    srand ((unsigned) time (0));
+    for(int i = 0; i < arrayLength; i++)
+    {
+        num_array[i] = rand ();
+    }
+}
+
+void getRandArray_bound (int num_array[], int arrayLength, int bound)
+{
+    srand ((unsigned) time (0));
+    for(int i = 0; i < arrayLength; i++)
+    {
+        num_array[i] = rand ()% bound;
+    }
+}
+
 void getIntRandArray (int num_array[], int arrayLength)
 {
     int rand_value;

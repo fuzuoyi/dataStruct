@@ -70,3 +70,25 @@ void insertionSort (int array[], int arrayLength)
         }
     }
 }
+
+
+void countingSort (int array[], int arrayLength)
+{
+    int counts[MaxNum] = { 0 };
+
+    // 将元素放到相应的计数数组中
+    for(int i = 0; i < arrayLength; i++)
+        counts[array[i]]++;
+
+    int index = 0;
+
+    // 从计数数组中取出元素到原数组
+    for(int i = 0; i < MaxNum; i++)
+    {
+        while(counts[i] > 0)
+        {
+            counts[i]--;
+            array[index++] = i;
+        }
+    }
+}
