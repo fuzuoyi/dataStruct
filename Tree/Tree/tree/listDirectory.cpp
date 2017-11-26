@@ -86,7 +86,6 @@ unsigned long sizeDirectory (string path, int depth)
                 totalSize += fileinfo.size;
                 printName (fileinfo.name, depth, fileinfo.size);
             }
-
         } while(_findnext (hFile, &fileinfo) == 0);
     }
     return totalSize;

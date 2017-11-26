@@ -7,17 +7,15 @@
 using namespace std;
 
 
-
-
-
 int main ()
 {
     string filePath = "E:/ProgramFile/C_CPP/dataStruct/Tree";
 
-    //listDirectory (filePath);
+    listDirectory (filePath);
 
-    unsigned long l = sizeDirectory (filePath);
-    printf ("%ld\r\n", l);
+    //unsigned long l = sizeDirectory (filePath);
+    //printf ("%ld\r\n", l);
+
     system ("pause");
     return 0;
 }
