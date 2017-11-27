@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList", "LinkedList\LinkedList\LinkedList.vcxproj", "{A5DC78FB-91DE-407B-B8B9-1C3BA1932182}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DoublyLinkedList", "LinkedList\DoublyLinkedList\DoublyLinkedList.vcxproj", "{B752E2E1-335A-498C-BAB3-E00C186C6A09}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Deque", "LinkedList\Deque\Deque.vcxproj", "{3BE5DC9A-9258-4B03-B2D5-6ED2F37093C6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReversePolish", "LinkedList\ReversePolish\ReversePolish.vcxproj", "{74BB3801-5B9A-4D1D-9AA6-714E44B190B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,14 @@ Global
 		{3BE5DC9A-9258-4B03-B2D5-6ED2F37093C6}.Release|x64.Build.0 = Release|x64
 		{3BE5DC9A-9258-4B03-B2D5-6ED2F37093C6}.Release|x86.ActiveCfg = Release|Win32
 		{3BE5DC9A-9258-4B03-B2D5-6ED2F37093C6}.Release|x86.Build.0 = Release|Win32
+		{74BB3801-5B9A-4D1D-9AA6-714E44B190B4}.Debug|x64.ActiveCfg = Debug|x64
+		{74BB3801-5B9A-4D1D-9AA6-714E44B190B4}.Debug|x64.Build.0 = Debug|x64
+		{74BB3801-5B9A-4D1D-9AA6-714E44B190B4}.Debug|x86.ActiveCfg = Debug|Win32
+		{74BB3801-5B9A-4D1D-9AA6-714E44B190B4}.Debug|x86.Build.0 = Debug|Win32
+		{74BB3801-5B9A-4D1D-9AA6-714E44B190B4}.Release|x64.ActiveCfg = Release|x64
+		{74BB3801-5B9A-4D1D-9AA6-714E44B190B4}.Release|x64.Build.0 = Release|x64
+		{74BB3801-5B9A-4D1D-9AA6-714E44B190B4}.Release|x86.ActiveCfg = Release|Win32
+		{74BB3801-5B9A-4D1D-9AA6-714E44B190B4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
