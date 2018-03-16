@@ -34,3 +34,11 @@ int main()
 	system("pause");
 	return 0;
 }
+
+
+SearchTree makeEmpty(SearchTree T);
+pTNode find(int x, SearchTree T);
+pTNode findMin(SearchTree T);
+pTNode findMax(SearchTree T);
+SearchTree insert(int x, SearchTree T);
+SearchTree deleteNode(int x, SearchTree T);
