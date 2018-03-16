@@ -1,21 +1,36 @@
 #include <cstdio>
 #include <cstdlib>
 #include <string>
-
+#include <iostream>
 #include "tree/listDirectory.h"
 
 using namespace std;
 
 
-int main ()
+struct TreeNode;
+typedef struct TreeNode *pTNode;
+typedef struct TreeNode *SearchTree;
+
+struct TreeNode
 {
-    string filePath = "E:/ProgramFile/C_CPP/dataStruct/Tree";
+	int value;
+	SearchTree left;
+	SearchTree right;
+};
 
-    listDirectory (filePath);
+SearchTree makeEmpty(SearchTree T);
+pTNode find(int x, SearchTree T);
+pTNode findMin(SearchTree T);
+pTNode findMax(SearchTree T);
+SearchTree insert(int x, SearchTree T);
+SearchTree deleteNode(int x, SearchTree T);
 
-    //unsigned long l = sizeDirectory (filePath);
-    //printf ("%ld\r\n", l);
 
-    system ("pause");
-    return 0;
+
+int main()
+{
+	printf("%s", "sdfghjkl");
+
+	system("pause");
+	return 0;
 }
