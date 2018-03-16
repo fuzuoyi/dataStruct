@@ -28,16 +28,30 @@ pTNode findMax(SearchTree T);
 SearchTree insert(int x, SearchTree T);
 SearchTree deleteNode(int x, SearchTree T);
 
-void traversal_List (SearchTree T);
+void traversal_Tree (SearchTree T);
+
+static void lsTree (SearchTree T, int depth);
+void printValue (int value, int depth);
+
+
+
 
 
 int main()
 {
-	printf("%s", "sdfghjkl");
+    SearchTree t=NULL;
 
+    t=insert (10, t);
+    t = insert (5, t);
+    t = insert (15, t);
+    t = insert (4, t);
+    t = insert (25, t);
+    traversal_Tree (t);
 	system("pause");
+
 	return 0;
 }
+
 
 
 SearchTree makeEmpty (SearchTree T)
@@ -150,7 +164,25 @@ SearchTree deleteNode (int x, SearchTree T)
 }
 
 
-void traversal_List (SearchTree T)
+void traversal_Tree (SearchTree T)
 {
+    lsTree (T, 0);
+}
 
+static void lsTree (SearchTree T, int depth)
+{
+    if(T != NULL)
+    {
+        printValue (T->value,depth);
+        lsTree (T->left,depth+1);
+        lsTree (T->right,depth+1);
+    }
+}
+
+void printValue (int value, int depth)
+{
+    string s;
+    for(int i = 0; i < depth; i++)
+        s += "  ";
+    printf ("%s%d\t\t\r\n", s.c_str (), value);
 }
