@@ -112,9 +112,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="tree\bst_book.cpp" />
     <ClCompile Include="tree\listDirectory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="tree\bst_book.h" />
     <ClInclude Include="tree\listDirectory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

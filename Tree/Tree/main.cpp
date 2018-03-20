@@ -4,81 +4,91 @@
 #include <iostream>
 #include <malloc.h>
 #include "tree/listDirectory.h"
+//#include "tree/bst_book.h"
+
 
 using namespace std;
 
 #define logError(x) printf(x)
 
 
-struct TreeNode;
-typedef struct TreeNode *pTNode;
-typedef struct TreeNode *SearchTree;
+struct BSTNode;
+typedef struct BSTNode *pTNode;
+typedef pTNode  BST;
 
-struct TreeNode
+struct BSTNode
 {
-	int value;
-	SearchTree left;
-	SearchTree right;
+    int x;
+    BST left;
+    BST right;
 };
 
-SearchTree makeEmpty(SearchTree T);
-pTNode find(int x, SearchTree T);
-pTNode findMin(SearchTree T);
-pTNode findMax(SearchTree T);
-SearchTree insert(int x, SearchTree T);
-SearchTree deleteNode(int x, SearchTree T);
-
-void traversal_Tree (SearchTree T);
-
-static void lsTree (SearchTree T, int depth);
-void printValue (int value, int depth);
+pTNode makeEmpty (int x);
+pTNode find (BST T, int x);
+pTNode findMin (BST T);
+pTNode findMax (BST T);
+void insert (BST &T, int x);
+void deleteNode (BST &T, int x);
+void deleteTree (BST &T);
 
 
 
 
 
-int main()
+int main ()
 {
-    SearchTree t=NULL;
+    BST t = makeEmpty (10);
 
-    t=insert (10, t);
-    t = insert (5, t);
-    t = insert (15, t);
-    t = insert (4, t);
-    t = insert (25, t);
-    traversal_Tree (t);
-	system("pause");
+    pTNode p = NULL;
 
-	return 0;
+    insert (t, 5);
+    insert (t, 4);
+    insert (t, 8);
+    insert (t, 12);
+    insert (t, 16);
+    insert (t, 15);
+
+    p = findMax (t);
+
+    deleteTree (t);
+
+
+    insert (t, 15);
+
+
+    system ("pause");
+
+    return 0;
 }
 
 
 
-SearchTree makeEmpty (SearchTree T)
+
+pTNode makeEmpty (int x)
 {
-    if(T != NULL)
-    {
-        makeEmpty (T->left);
-        makeEmpty (T->right);
-        free (T);
-    }
-    return NULL;
+    pTNode p = (pTNode) malloc (sizeof (struct BSTNode));
+    if(p == NULL)
+        logError ("Out of Space!!!!");
+    p->left = NULL;
+    p->right = NULL;
+    p->x = x;
+    return p;
 }
 
-pTNode find (int x, SearchTree T)
+pTNode find (BST T, int x)
 {
     if(T == NULL)
         return NULL;
-    if(x < T->value)
-        return find (x, T->left);
-    else if(x > T->value)
-        return find (x, T->right);
+    if(x < T->x)
+        return find (T->left, x);
+    else if(x > T->x)
+        return find (T->right, x);
     else
         return T;
 }
 
 
-pTNode findMin (SearchTree T)
+pTNode findMin (BST T)
 {
     // 递归实现，findMax同样可以用递归来实现
     if(T == NULL)
@@ -93,96 +103,90 @@ pTNode findMin (SearchTree T)
 }
 
 
-pTNode findMax (SearchTree T)
+pTNode findMax (BST T)
 {
-    // 非递归实现，findMin同样可以用非递归来实现
     if(T != NULL)
     {
         while(T->right != NULL)
             T = T->right;
     }
     return T;
-
 }
 
 
-SearchTree insert (int x, SearchTree T)
+void insert (BST &T, int x)
 {
-    if(T == NULL)
+    pTNode t = T, parent=NULL;
+
+    if(t == NULL)
     {
-        T = (pTNode)malloc (sizeof (struct TreeNode));
-        if(T == NULL)
-            logError ("Out of space!!");
+        T = makeEmpty (x);
+        return;
+    }
+
+    while(t != NULL)
+    {
+        parent = t;
+        if(t->x > x)
+            t = t->left;
+        else if(t->x < x)
+            t = t->right;
         else
-        {
-            T->value = x;
-            T->left = T->right = NULL;
-        }   
+            return;
     }
+
+    if(parent->x > x)
+        parent->left = makeEmpty (x);
     else
-    {
-        if(x < T->value)
-            T->left = insert (x, T->left);
-        else if(x > T->value)
-            T->right = insert (x, T->right);
-    }
-    return T;
+        parent->right = makeEmpty (x);
 }
 
-
-SearchTree deleteNode (int x, SearchTree T)
+void deleteNode (BST &T, int x)
 {
     pTNode tmpcell;
 
     if(T == NULL)
-        logError ("element not found!!!");
+    {
+        logError ("empty Tree!!!");
+        return;
+    }
+
+    if(x < T->x)
+        deleteNode (T->left, x);
+    else if(x > T->x)
+    {
+        deleteNode (T->right, x);
+    }
+    // x == T->x && (left & right leaf) exists 
+    else if(T->left && T->right)
+    {
+        tmpcell = findMin (T->right);
+        T->x = tmpcell->x;
+        deleteNode (T->right, T->x);
+    }
+    // x == T->x && (left or right leaf) exists 
     else
     {
-        if(x < T->value)
-            T->left = deleteNode (x,T->left);
-        else if(x>T->value)
-        {
-            T->right = deleteNode (x, T->right);
-        }
-        else if(T->left && T->right)
-        {
-            tmpcell = findMin (T->right);
-            T->value = T->right->value;
-            T->right = deleteNode (T->value, T->right);
-        }
-        else
-        {
-            tmpcell = T;
-            if(T->left == NULL)
-                T = T->right;
-            else if(T->right == NULL)
-                T = T->left;
-            free (tmpcell);
-        }
+        tmpcell = T;
+        if(T->left == NULL)
+            T = T->right;
+        else if(T->right == NULL)
+            T = T->left;
+        free (tmpcell);
     }
-    return T;
 }
 
-
-void traversal_Tree (SearchTree T)
-{
-    lsTree (T, 0);
-}
-
-static void lsTree (SearchTree T, int depth)
+void deleteTree (BST &T)
 {
     if(T != NULL)
     {
-        printValue (T->value,depth);
-        lsTree (T->left,depth+1);
-        lsTree (T->right,depth+1);
+        deleteTree (T->left);
+        deleteTree (T->right);
+        free (T);
+        T = nullptr;
     }
 }
 
-void printValue (int value, int depth)
-{
-    string s;
-    for(int i = 0; i < depth; i++)
-        s += "  ";
-    printf ("%s%d\t\t\r\n", s.c_str (), value);
-}
+
+
+
