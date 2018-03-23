@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 #include <malloc.h>
-// #include "tree/listDirectory.h"
+#include "tree/listDirectory.h"
 #include "tree/bst.h"
 
 
