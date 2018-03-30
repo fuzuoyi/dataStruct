@@ -99,7 +99,7 @@ int back (Queue Q);  // 获取队列尾部元素
 
 
 void clearQueue (Queue Q);  // 清空队列中所有元素，头结点还在
-void deleteQueue (Queue Q); // 删除队列，释放内存
+void deleteQueue (Queue &Q); // 删除队列，释放内存
 
 void traversal_Queue (Queue Q); // 遍历队列
 

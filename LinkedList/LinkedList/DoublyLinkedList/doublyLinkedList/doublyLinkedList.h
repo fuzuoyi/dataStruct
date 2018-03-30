@@ -63,7 +63,7 @@ void delete_tail (DList L);
 void deleteNode (int index, DList L);
 
 // 删除链表
-void deleteList (DList L);
+void deleteList (DList &L);
 
 // 搜索链表中是否有某个值，返回NotInList或者该值在链表中的第一个索引
 int search (int Value, DList L);

@@ -97,7 +97,7 @@ void dequeue_back (Deque D)
 }
 
 
-void deleteDeque (Deque D)
+void deleteDeque (Deque &D)
 {
     while(!isEmpty (D))
     {

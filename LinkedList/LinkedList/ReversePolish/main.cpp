@@ -21,6 +21,7 @@ int main ()
 
 string toReversePolish (string s)
 {
+	return NULL;
    
 }
 

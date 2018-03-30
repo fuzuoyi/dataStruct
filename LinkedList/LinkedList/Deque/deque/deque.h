@@ -57,7 +57,7 @@ void dequeue_front (Deque D);
 void dequeue_back (Deque D);
 
 //  删除队列
-void deleteDeque (Deque D);
+void deleteDeque (Deque &D);
 
 // 获取队列头部或尾部节点值
 int peek_front (Deque D);

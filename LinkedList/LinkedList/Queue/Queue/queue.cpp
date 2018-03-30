@@ -188,7 +188,7 @@ void clearQueue (Queue Q)
 // Returns:   void
 // Description: 删除队列（包括头结点，删除后指针失效）
 //************************************
-void deleteQueue (Queue Q)
+void deleteQueue (Queue &Q)
 {
     clearQueue (Q); // 先清空队列中所有元素
     free (Q->front);// 在释放头结点

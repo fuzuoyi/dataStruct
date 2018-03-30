@@ -126,7 +126,7 @@ void deleteNode (int index, DList L)
     free (p);
 }
 
-void deleteList (DList L)
+void deleteList (DList &L)
 {
     while(!isEmpty (L))
     {
